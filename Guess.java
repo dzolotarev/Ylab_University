@@ -10,20 +10,16 @@ public class Guess {
         try (Scanner scanner = new Scanner(System.in)) {
             do {
                 int n = scanner.nextInt();
-
+                attempts++;
                 if (n == number) {
-                    attempts++;
                     System.out.println("Ты угадал с " + attempts + " попытки");
                     break;
                 } else if (n > number) {
                     System.out.print("Мое число меньше!");
-                    attempts++;
                 } else{
                     System.out.print("Мое число больше!");
-                    attempts++;
                 }
                 System.out.println(" Осталось " + --maxAttempts + " попыток");
-
 
                 if (maxAttempts == 0) {
                     System.out.println("Ты не угадал");
