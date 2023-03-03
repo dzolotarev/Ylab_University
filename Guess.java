@@ -11,21 +11,23 @@ public class Guess {
             do {
                 int n = scanner.nextInt();
 
-                if (n > number) {
-                    System.out.println("Мое число меньше! Осталось " + --maxAttempts + " попыток");
-                    attempts++;
-                } else if (n < number) {
-                    System.out.println("Мое число больше! Осталось " + --maxAttempts + " попыток");
-                    attempts++;
-                } else {
+                if (n == number) {
                     attempts++;
                     System.out.println("Ты угадал с " + attempts + " попытки");
                     break;
+                } else if (n > number) {
+                    System.out.print("Мое число меньше!");
+                    attempts++;
+                } else{
+                    System.out.print("Мое число больше!");
+                    attempts++;
                 }
+                System.out.println(" Осталось " + --maxAttempts + " попыток");
+
+
                 if (maxAttempts == 0) {
                     System.out.println("Ты не угадал");
                 }
-
             }
             while (maxAttempts > 0);
         }
