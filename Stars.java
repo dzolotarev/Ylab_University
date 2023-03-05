@@ -12,7 +12,7 @@ public class Stars {
         try (Scanner scanner = new Scanner(System.in)) {
             int n = scanner.nextInt();
             int m = scanner.nextInt();
-            String template = scanner.next();
+            char template = scanner.next().charAt(0);
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < m; j++) {
                     if (j < m - 1) {
