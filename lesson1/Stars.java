@@ -1,10 +1,12 @@
+package lesson1;
+
 import java.util.Scanner;
 import java.util.StringJoiner;
 
 public class Stars {
     public static void main(String[] args) {
         stars();
-        //stars2();
+        //stars2(); // just another implementation
         //stars3();
     }
 
