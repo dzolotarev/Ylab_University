@@ -6,7 +6,7 @@ public class StatsAccumulatorImpl implements StatsAccumulator {
     private int min;
     private int max;
     private int counter;
-    private Double avg;
+    private Double avg = 0.0;
 
 
     @Override
