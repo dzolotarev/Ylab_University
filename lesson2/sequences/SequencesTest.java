@@ -13,5 +13,6 @@ public class SequencesTest {
         sequences.h(5);
         sequences.i(5);
         sequences.j(5);
+        sequences.j(0);
     }
 }

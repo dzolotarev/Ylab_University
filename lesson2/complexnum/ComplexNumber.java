@@ -9,55 +9,31 @@ public class ComplexNumber {
         this.real = real;
     }
 
-    //комплексное число с минмой частью
+    //комплексное число с мнимой частью
     public ComplexNumber(double real, double imagine) {
-        this(real);
+        this.real = real;
         this.imagine = imagine;
     }
 
     //сложение комплекстных чисел: (a + bi) + (c + di) = (a + c) + (b + d)i
     public ComplexNumber sum(ComplexNumber num) {
-        ComplexNumber result;
-        double imagine;
-
         double real = this.real + num.real;
-        if (this.imagine != 0 || num.imagine != 0) {
-            imagine = this.imagine + num.imagine;
-            result = new ComplexNumber(real, imagine);
-        } else {
-            result = new ComplexNumber(real);
-        }
-        return result;
+        double imagine = this.imagine + num.imagine;
+        return new ComplexNumber(real, imagine);
     }
 
     //вычитание комплексных чисел: (a + bi) - (c + di) = (a - c) + (b - d)i
     public ComplexNumber subtr(ComplexNumber num) {
-        ComplexNumber result;
-        double imagine;
         double real = this.real - num.real;
-        if (this.imagine != 0 || num.imagine != 0) {
-            imagine = this.imagine - num.imagine;
-            result = new ComplexNumber(real, imagine);
-        } else {
-            result = new ComplexNumber(real);
-        }
-        return result;
+        double imagine = this.imagine - num.imagine;
+        return new ComplexNumber(real, imagine);
     }
 
     //умножение комплексных чисел:  (a + bi) · (c + di) = (ac – bd) + (ad + bc)i
     public ComplexNumber mult(ComplexNumber num) {
-        ComplexNumber result;
-        double real;
-        double imagine;
-        if (this.imagine != 0 || num.imagine != 0) {
-            real = this.real * num.real - this.imagine * num.imagine;
-            imagine = this.real * num.imagine + this.imagine * num.real;
-            result = new ComplexNumber(real, imagine);
-        } else {
-            real = this.real * num.real;
-            result = new ComplexNumber(real);
-        }
-        return result;
+        double real = this.real * num.real - this.imagine * num.imagine;
+        double imagine = this.real * num.imagine + this.imagine * num.real;
+        return new ComplexNumber(real, imagine);
     }
 
     //модуль комплексного числа

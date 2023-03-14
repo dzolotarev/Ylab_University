@@ -5,6 +5,8 @@ public class StatsAccumulatorTest {
         StatsAccumulator sa = new StatsAccumulatorImpl();
         System.out.println(sa.getAvg());
         sa.add(1);
+        System.out.println(sa.getMin());
+        System.out.println(sa.getMax());
         sa.add(2);
         System.out.println(sa.getAvg());
         sa.add(0);

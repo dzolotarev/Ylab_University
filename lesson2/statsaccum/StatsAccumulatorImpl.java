@@ -1,24 +1,17 @@
 package lesson2.statsaccum;
 
 public class StatsAccumulatorImpl implements StatsAccumulator {
-    private int previousValue;
     private int sum;
-    private int min;
-    private int max;
     private int counter;
-    private Double avg = 0.0;
-
+    private int min = Integer.MAX_VALUE;
+    private int max = Integer.MIN_VALUE;
 
     @Override
     public void add(int value) {
         counter++;
-        min = Math.min(previousValue, value);
-        max = Math.max(previousValue, value);
         sum += value;
-        if (counter > 0) {
-            avg = (double) sum / counter;
-        }
-        previousValue = value;
+        min = Math.min(min, value);
+        max = Math.max(max, value);
     }
 
     @Override
@@ -38,6 +31,9 @@ public class StatsAccumulatorImpl implements StatsAccumulator {
 
     @Override
     public Double getAvg() {
-        return avg;
+        if (counter > 0) {
+            return (double) sum / counter;
+        }
+        return 0.0;
     }
 }
