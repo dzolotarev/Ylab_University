@@ -1,4 +1,4 @@
-package lesson3.transliterator;
+package io.ylab.intensive.lesson03.transliterator;
 
 /**
  * @author Denis Zolotarev
