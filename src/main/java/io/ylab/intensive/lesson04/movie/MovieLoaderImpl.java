@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.sql.Types;
 
 public class MovieLoaderImpl implements MovieLoader {
-    private static final String query = "INSERT INTO movie (year, length, title, subject, actors, actress, director, popularity, awards)"
+    private static final String QUERY = "INSERT INTO movie (year, length, title, subject, actors, actress, director, popularity, awards)"
             + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     private DataSource dataSource;
 
@@ -22,7 +22,7 @@ public class MovieLoaderImpl implements MovieLoader {
     public void loadData(File file) {
         // РЕАЛИЗАЦИЮ ПИШЕМ ТУТ
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-             PreparedStatement preparedStatement = dataSource.getConnection().prepareStatement(query)) {
+             PreparedStatement preparedStatement = dataSource.getConnection().prepareStatement(QUERY)) {
             bufferedReader.readLine(); //пропускаем первую строку
             bufferedReader.readLine(); //пропускаем вторую строку )
             while (bufferedReader.ready()) {
